@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Blog perso",
   "main": "index.pug",
   "dependencies": {
@@ -36,6 +36,6 @@
     "style-loader": "^0.23.1",
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.10"
+    "webpack-dev-server": "^3.7.2"
   }
 }
