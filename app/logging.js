@@ -32,3 +32,4 @@ module.exports.errorLogger = morgan('combined', {
  })
 
 module.exports.accessLogger = morgan('combined', { stream: accessLogStream })
+module.exports.errorLogger = morgan('combined', { stream: errorLogStream })
