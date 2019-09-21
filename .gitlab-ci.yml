@@ -1,0 +1,18 @@
+stages:
+  - test
+  - deploy
+
+test:
+  stage: test
+  script:
+    - apt-get update -qy
+    - apt-get install -y nodejs 
+    - npm install
+    - npm run build
+
+deploy:
+  stage: deploy
+  script:
+    - cd /home/$SYS_USERNAME/blog-fork
+    - git stash && git pull && git checkout master
+    - sudo systemctl restart nginx
