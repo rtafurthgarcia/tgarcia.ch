@@ -1,5 +1,5 @@
 # Instructions
-Puisque le site n'est plus vraiment statique, j'ai du faire usage de pas mal d'outils.
+Okay c'est juste un site statique mais il nécessite de taper dans une api locale pour récupérer mes contributions Gitlab, donc j'ai du faire usage de pas mal d'outils.
 C'est pourquoi j'ai créé ce petit guide au cas où.
 
 ## Préparation
