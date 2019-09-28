@@ -3,10 +3,10 @@ stages:
   - deploy
 
 test:
+  image: "msquare/bitbucket-nodejs:latest"
   stage: test
   script:
     - apt-get update -qy
-    - apt-get install -y nodejs 
     - npm install
     - npm run build
 
