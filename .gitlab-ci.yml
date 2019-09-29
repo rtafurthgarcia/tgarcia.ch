@@ -3,16 +3,18 @@ stages:
   - deploy
 
 test:
+  image: "msquare/bitbucket-nodejs:latest"
   stage: test
   script:
     - apt-get update -qy
-    - apt-get install -y nodejs 
     - npm install
     - npm run build
 
 deploy:
+  tags: [websrv2]
   stage: deploy
   script:
-    - cd /home/$SYS_USERNAME/blog-fork
-    - git stash && git pull && git checkout master
+    - npm install 
+    - npm run build
+    - sudo cp -R public /var/www/blog-fork
     - sudo systemctl restart nginx
