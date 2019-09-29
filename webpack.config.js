@@ -7,7 +7,7 @@ module.exports = {
   entry: path.join(__dirname, 'assets', 'js', 'app.js'),
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'public')
+    path: path.resolve(__dirname, 'public', 'js')
   },
   module: {
     rules: [
@@ -32,7 +32,12 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      filename: path.join(__dirname, 'public', 'index.html'),
       template: path.join(__dirname, 'assets', 'views', 'index.pug')
+    }),
+    new HtmlWebpackPlugin({
+      filename: path.join(__dirname, 'public', 'error.html'),
+      template: path.join(__dirname, 'assets', 'views', 'error.pug')
     }),
     new CopyWebpackPlugin([
       { 
