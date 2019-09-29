@@ -14,8 +14,8 @@
   "author": "HiTechRabbit",
   "license": "GPL-3.0",
   "devDependencies": {
-    "@babel/core": "^7.6.0",
-    "@babel/preset-env": "^7.6.0",
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
     "babel": "^6.23.0",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^2.1.1",
@@ -25,8 +25,8 @@
     "pug": "^2.0.4",
     "pug-loader": "^2.4.0",
     "style-loader": "^0.23.1",
-    "typed.js": "^2.0.10",
-    "webpack": "^4.40.2",
+    "typed.js": "^2.0.11",
+    "webpack": "^4.41.0",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.1"
   }
