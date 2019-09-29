@@ -11,6 +11,9 @@ test:
     - npm run build
 
 deploy:
+  only:
+    refs:
+      - master
   tags: [websrv2]
   stage: deploy
   script:
