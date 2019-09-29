@@ -18,7 +18,7 @@ async function getContributions() {
         return count
     }
 
-    const response = await fetch('/contributions', {
+    const response = await fetch('https://api.cdstm.ch/contributions', {
         method: 'GET',
         headers:{
           'Content-Type': 'application/json'
@@ -48,4 +48,3 @@ async function getContributions() {
 }
 
 window.addEventListener("load", getContributions)
-window.setTimeout(getContributions, 300000);
