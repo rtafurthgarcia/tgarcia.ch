@@ -11,10 +11,14 @@ test:
     - npm run build
 
 deploy:
+  only:
+    refs:
+      - master
   tags: [websrv2]
   stage: deploy
   script:
     - npm install 
     - npm run build
+    - sudo rm -rf /var/www/blog-fork
     - sudo cp -R public /var/www/blog-fork
     - sudo systemctl restart nginx
