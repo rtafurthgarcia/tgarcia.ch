@@ -30,7 +30,7 @@ async function getContributions() {
         console.error("Failure to get the contributions related data.")
     }
 
-    const contributions = await request.json()
+    const contributions = await response.json()
 
     var yearlyParagraph = document.getElementById('ycontrib').children[0]
     var monthlyParagraph = document.getElementById('mcontrib').childNodes[0]
