@@ -36,8 +36,12 @@ module.exports = {
       template: path.join(__dirname, 'assets', 'views', 'index.pug')
     }),
     new HtmlWebpackPlugin({
-      filename: path.join(__dirname, 'public', 'error.html'),
-      template: path.join(__dirname, 'assets', 'views', 'error.pug')
+      filename: path.join(__dirname, 'public', 'other_error.html'),
+      template: path.join(__dirname, 'assets', 'views', 'other_error.pug')
+    }),
+    new HtmlWebpackPlugin({
+      filename: path.join(__dirname, 'public', '404.html'),
+      template: path.join(__dirname, 'assets', 'views', '404.pug')
     }),
     new CopyWebpackPlugin([
       { 
