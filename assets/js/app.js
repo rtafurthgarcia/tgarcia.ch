@@ -1,11 +1,11 @@
-import Typewriter from 'typed.js'
+import Typed from 'typed.js';
 
-new Typewriter('#dynamic', {
+var typed = new Typed('#dynamic', {
     strings: ['Libéral.', 'Anti-consumériste.', 'Pro-décentralisation.', 'Marathonien (ou presque)'],
-    loop: true,
+    smartBackspace: true, // Default value
     typeSpeed: 80,
-    smartBackspace: true
-})
+    loop: true
+});
 
 async function getContributions() {
     function countContributions(since, contributions) {
@@ -20,6 +20,7 @@ async function getContributions() {
 
     const response = await fetch('https://api.cdstm.ch/contributions', {
         method: 'GET',
+        mode: 'cors',
         headers:{
           'Content-Type': 'application/json'
         }
@@ -29,7 +30,7 @@ async function getContributions() {
         console.error("Failure to get the contributions related data.")
     }
 
-    const contributions = await response.json()
+    const contributions = await request.json()
 
     var yearlyParagraph = document.getElementById('ycontrib').children[0]
     var monthlyParagraph = document.getElementById('mcontrib').childNodes[0]
