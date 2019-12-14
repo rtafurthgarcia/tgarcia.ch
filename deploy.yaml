@@ -1,0 +1,7 @@
+---
+
+- name: Deploy a new version of my blog
+  hosts: mothergoose
+  tasks:
+    - name: Compiling pug files
+      command: npm run build
