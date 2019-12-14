@@ -18,7 +18,7 @@ async function getContributions() {
         return count
     }
 
-    const response = await fetch('https://api.cdstm.ch/contributions', {
+    const response = await fetch('https://git.spätz.li/api/v1/users/richard/heatmap', {
         method: 'GET',
         mode: 'cors',
         headers:{
