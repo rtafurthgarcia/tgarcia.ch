@@ -11,5 +11,6 @@ if [ $(git rev-parse HEAD) == $(git rev-parse @{u}) ]; then
 
 	rm -rf $web_path/*
 	cp -r public/* $web_path/
+else
+	echo "Aucune màj disponible"
 fi
-echo "Aucune màj disponible"

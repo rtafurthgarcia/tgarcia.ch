@@ -21,7 +21,7 @@ async function getContributions() {
         return count
     }
 
-    let response = await fetch('https://git.spätz.li/api/v1/users/richard/heatmap', {
+    let response = await fetch('https://git.chnoepf.li/api/v1/users/richard/heatmap', {
         method: 'GET',
         mode: 'cors',
         headers:{
