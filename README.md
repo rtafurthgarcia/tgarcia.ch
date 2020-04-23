@@ -1,10 +1,9 @@
 # Instructions
-Okay c'est juste un site statique mais il nécessite de taper dans une api locale pour récupérer mes contributions Gitlab, donc j'ai du faire usage de pas mal d'outils.
-C'est pourquoi j'ai créé ce petit guide au cas où.
+Page d'accueil de tgarcia.ch
 
 ## Préparation
-Bon, avant de pouvoir exécuter le serveur web, il faut
 1. Importer les composants avec `npm install`
 2. Générer les assets avec `npm run build`
+3. Déployer la nouvelle version avec `npm run deploy` -> à mettre à jour avant
 
 Cependant si vous voulez avoir un aperçu, vous pouvez toujours lancer le serveur de développement via `npm run server`
