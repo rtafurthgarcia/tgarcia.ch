@@ -1,0 +1,1 @@
+yunohost ansible_host=mothergoose:yunohost ansible_connection=lxd

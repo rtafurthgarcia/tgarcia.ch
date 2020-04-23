@@ -8,7 +8,7 @@ let typed = new Typed('#dynamic', {
         'Humaniste.', 
         'Anti-consumériste.', 
         'Pro-décentralisation.', 
-        'Marathonien (ou presque.)'
+        'Quasi-Marathonien.'
     ],
     smartBackspace: true, // Default value
     typeSpeed: 80,

@@ -1,16 +1,4 @@
 #!/bin/bash
-
-git fetch
-if [ $(git rev-parse HEAD) == $(git rev-parse @{u}) ]; then 
-	echo "Nouvelle version détectée, mise à jour du contenu"
-	git stash
-	git pull 
-
-	npm install
-	npm run build
-
-	rm -rf $web_path/*
-	cp -r public/* $web_path/
-else
-	echo "Aucune màj disponible"
-fi
+lxc exec mothergoose:yunohost -- rm -rf /var/www/webapp_adidal/tgarcia.ch_/*
+lxc file push -r public/* mothergoose:yunohost/var/www/webapp_adidal/tgarcia.ch_/.
+lxc exec mothergoose:yunohost -- systemctl reload nginx

@@ -1,18 +1,18 @@
 {
   "name": "blog",
-  "version": "1.0.0",
-  "description": "Blog perso",
+  "version": "2.0.0",
+  "description": "Page d'accueil",
   "main": "index.pug",
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "server": "webpack-dev-server --config webpack.config.js",
-    "deploy": "ansible-playbook deploy.yaml"
+    "deploy": "bash deploy.sh"
   },
   "repository": {
     "type": "git",
-    "url": "git@framagit.org:HiTechRabbit/blog-fork.git"
+    "url": "ssh://gitea@git.tgarcia.ch/richard/blog-fork.git"
   },
-  "author": "HiTechRabbit",
+  "author": "Richard Tafurth-Garcia",
   "license": "GPL-3.0",
   "devDependencies": {
     "@babel/core": "^7.6.2",

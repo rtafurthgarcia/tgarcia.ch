@@ -1,11 +1,11 @@
 @font-face {
     font-family: Panton-LightCaps;
-    src: url("/fonts/Panton-LightCaps.otf");
+    src: url("/home/fonts/Panton-LightCaps.otf");
 }
 
 @font-face {
     font-family: Panton-LightitalicCaps;
-    src: url("/fonts/Panton-LightitalicCaps.otf");
+    src: url("/home/fonts/Panton-LightitalicCaps.otf");
 }
 
 body {
@@ -94,7 +94,7 @@ footer {
     grid-row: 3;
     grid-column-start: 2;
     grid-column-end: 4;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 75% 25%;
 }
 
 footer a, footer p {
@@ -158,13 +158,10 @@ footer p {
     cursor: pointer
 }
 
-#gpg img:active:after {
-    content:attr(title);
-    padding:5px;
-    border:1px solid #ccc;
-    top:5px;
-    right:10%;
-    background: #bada55;
+#gpg div a {
+    font-size: 1em;
+    align-self: first baseline;
+    
 }
 
 @media only screen and (max-width: 600px) {
@@ -199,6 +196,7 @@ footer p {
 
     main {
         padding: 0;
+        display: block;
     }
 
     main section {
@@ -212,10 +210,33 @@ footer p {
     #presentation p, #presentation span {
         font-size: 1.2em;
     }
-
-    footer {
-        grid-column: 1;
-        grid-row: 4;
+    
+    #gpg {
+        grid-template-rows: auto auto;
+        grid-row-gap: 12%;
+        grid-template-columns: auto;
+        margin-bottom: 12%;
+    }
+    
+    #gpg div img{
+        display: none;
+    }
+    
+    #gpg div:first-child {
+        grid-row: 1;
+    }
+    
+    #gpg div:first-child p {
+        text-align: center;
+    }
+    
+    #gpg div:last-child {
+        grid-row: 2;
+        text-align: left;
+    }
+    
+    h3 {
+        font-size: 0.8em;
     }
 
     ul {
