@@ -81,6 +81,7 @@ aside {
     grid-column-start: 2;
     grid-column-end: 2;
     grid-row: 2;
+    height: auto;
 }
 
 aside img {
@@ -122,46 +123,48 @@ footer p {
     margin: 0;
 }
 
-#contributions {
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: auto;
-    display: grid;
-    grid-row: 3;
-    text-align: center;
-}
-
-#contributions img {
-    width: 30%;
-    float: right;
-}
-
-#contributions div {
-    grid-template-rows: auto min-content;
-    display: grid;
-}
-
-#contributions p {
-    font-size: 2.8em;
-    grid-row: 1;
-    margin: 0;
-}
-
-#contributions h3 {
-    font-size: 1em;
-    font-family: 'Panton-LightCaps', 'sans-serif';
-    grid-row: 2;
-    margin: 0;
-}
-
-#contributions h3:first-child {
-    grid-row: 1 span 2;
-    text-align: left;
-    line-height: 2em;
-
-}
-
 #presentation {
     grid-row: 2;
+}
+
+#gpg {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-template-rows: auto;
+    grid-column-gap: 2%;
+}
+
+#gpg div:last-child {
+    text-align: right;
+}
+
+#gpg div {
+    display: grid;
+    grid-auto-rows: auto auto;
+}
+
+#gpg div h3, #gpg div p, #gpg div a {
+    margin-top: 0;
+    margin-bottom: 0;
+    align-self: end;
+}
+
+#gpg img {
+    width: 24px;
+    height: 24px;
+}
+
+#gpg img:hover {
+    cursor: pointer
+}
+
+#gpg img:active:after {
+    content:attr(title);
+    padding:5px;
+    border:1px solid #ccc;
+    top:5px;
+    right:10%;
+    background: #bada55;
 }
 
 @media only screen and (max-width: 600px) {
@@ -202,21 +205,6 @@ footer p {
         margin-bottom: 5%;
     }
 
-    #contributions {
-        grid-template-columns: 25% 25% 25% 25%;
-        display: grid;
-        grid-row: 3;
-        text-align: center;
-    }
-
-    #contributions p {
-        font-size: 2.5em;
-    }
-
-    #contributions h3 {
-        font-size: 0.7em;
-    }
-
     footer a, footer p {
         font-size: 0.7em;
     }
@@ -245,17 +233,4 @@ footer p {
         float: left;
         display: inline;
     }
-
-    #contributions p {
-        font-size: 2em;
-    }
-
-
-    #contributions h3 {
-        font-size: 0.8em;
-    }
 } 
-
-.hidden {
-    display: none !important;
-}
