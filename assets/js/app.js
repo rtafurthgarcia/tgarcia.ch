@@ -3,7 +3,7 @@
 import Typed from 'typed.js';
 
 let typed = new Typed('#dynamic', {
-    strings: ['Libéral.', 'Anti-consumériste.', 'Pro-décentralisation.', 'Marathonien (ou presque)'],
+    strings: ['Développeur logiciel.', 'Anti-consumériste.', 'Pro-décentralisation.', 'Marathonien (ou presque)'],
     smartBackspace: true, // Default value
     typeSpeed: 80,
     loop: true
@@ -21,7 +21,7 @@ async function getContributions() {
         return count
     }
 
-    let response = await fetch('https://git.chnoepf.li/api/v1/users/richard/heatmap', {
+    let response = await fetch('https://git.tgarcia.ch/api/v1/users/richard/heatmap', {
         method: 'GET',
         mode: 'cors',
         headers:{
@@ -31,24 +31,34 @@ async function getContributions() {
 
     if(! response.ok) {
         console.error("Failure to get the contributions related data.")
+    } else {
+        const contributions = await response.json()
+
+        let yearlyParagraph = document.getElementById('ycontrib').children[0]
+        let monthlyParagraph = document.getElementById('mcontrib').childNodes[0]
+        let weeklyParagraph = document.getElementById('wcontrib').childNodes[0]
+
+        let lastYear = new Date()
+        lastYear.setFullYear( lastYear.getFullYear() - 1 )
+        let lastMonth = new Date()
+        lastMonth.setMonth( lastMonth.getMonth() - 1 )
+        let lastWeek = new Date()
+        lastWeek.setDate( lastWeek.getDate() - 7 )
+
+        let yearlyContributions = countContributions(lastYear, contributions)
+        let monthlyContributions = countContributions(lastMonth, contributions)
+        let weeklyContributions = countContributions(lastWeek, contributions) 
+
+        yearlyParagraph.textContent = yearlyContributions
+        monthlyParagraph.textContent = monthlyContributions
+        weeklyParagraph.textContent = weeklyContributions
+
+        // Affiche les contributions si ça en vaut la peine
+        if (yearlyContributions != 0 || monthlyContributions != 0 || weeklyContributions != 0) {
+            let contributions_section = document.getElementById("contributions")
+            contributions_section.className = '';
+        }
     }
-
-    const contributions = await response.json()
-
-    let yearlyParagraph = document.getElementById('ycontrib').children[0]
-    let monthlyParagraph = document.getElementById('mcontrib').childNodes[0]
-    let weeklyParagraph = document.getElementById('wcontrib').childNodes[0]
-
-    let lastYear = new Date()
-    lastYear.setFullYear( lastYear.getFullYear() - 1 )
-    let lastMonth = new Date()
-    lastMonth.setMonth( lastMonth.getMonth() - 1 )
-    let lastWeek = new Date()
-    lastWeek.setDate( lastWeek.getDate() - 7 )
-
-    yearlyParagraph.textContent = countContributions(lastYear, contributions)
-    monthlyParagraph.textContent = countContributions(lastMonth, contributions)
-    weeklyParagraph.textContent = countContributions(lastWeek, contributions)
 }
 
 window.addEventListener("load", getContributions)
