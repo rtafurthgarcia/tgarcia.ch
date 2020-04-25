@@ -1,11 +1,13 @@
 @font-face {
     font-family: Panton-LightCaps;
     src: url("/home/fonts/Panton-LightCaps.otf");
+    font-display: swap;
 }
 
 @font-face {
     font-family: Panton-LightitalicCaps;
     src: url("/home/fonts/Panton-LightitalicCaps.otf");
+    font-display: swap;
 }
 
 body {
