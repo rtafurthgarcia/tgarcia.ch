@@ -145,9 +145,16 @@ footer p {
     grid-auto-rows: auto auto;
 }
 
-#gpg div h3, #gpg div p, #gpg div a {
+#gpg div p, #gpg div a, #gpg div h3 {
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 0; 
+}
+
+#gpg div h3 {
+    align-self: start; 
+}
+
+#gpg div p, #gpg div a {
     align-self: end;
 }
 
@@ -162,8 +169,7 @@ footer p {
 
 #gpg div a {
     font-size: 1em;
-    align-self: first baseline;
-    
+    align-self: last baseline;
 }
 
 @media only screen and (max-width: 600px) {

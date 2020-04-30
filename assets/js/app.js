@@ -16,7 +16,13 @@ let typed = new Typed('#dynamic', {
 })
 
 const GPG_FINGERPRINT = "833A 50B7 ACE7 DE0A 70A9 EF08 C3C7 030D 491A D0EF"
+let rotation = 180;
 
-document.getElementById('clipboard').onclick = function() {
+let clipboard = document.getElementById('clipboard')
+clipboard.onclick = function() {
+    clipboard.style.transform = `rotateY(${rotation}deg)`
+    clipboard.style.transitionDuration = "0.5s";
+    rotation = rotation * (-1)
+
     navigator.clipboard.writeText(GPG_FINGERPRINT)
 }
