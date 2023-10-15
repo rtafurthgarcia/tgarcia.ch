@@ -3,7 +3,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: path.join(__dirname, 'assets', 'js', 'app.js'),
   output: {
     filename: 'bundle.js',
@@ -11,7 +11,7 @@ module.exports = {
   },
   module: {
     rules: [
-      { 
+      {
         test: /\.pug$/,
         use: ['pug-loader']
       },
@@ -43,41 +43,41 @@ module.exports = {
       filename: path.join(__dirname, 'public', '404.html'),
       template: path.join(__dirname, 'assets', 'views', '404.pug')
     }),
-    new CopyWebpackPlugin([
-      { 
-        from: path.join(__dirname, 'assets', 'css', '*'), 
-        to: path.join(__dirname, 'public', 'css'),
-        toType: 'dir',
-        flatten: true
-      },
-      { 
-        from: path.join(__dirname, 'assets', 'fonts', '*'), 
-        to: path.join(__dirname, 'public', 'fonts'),
-        toType: 'dir',
-        flatten: true
-      },
-      { 
-        from: path.join(__dirname, 'assets', 'images', '*'), 
-        to: path.join(__dirname, 'public', 'images'),
-        toType: 'dir',
-        flatten: true
-      },
-      { 
-        from: path.join(__dirname, 'assets', 'files', '*'), 
-        to: path.join(__dirname, 'public'),
-        toType: 'dir',
-        flatten: true
-      }
-    ])
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.join(__dirname, 'assets', 'css'),
+          to: path.join(__dirname, 'public', 'css')
+        },
+        {
+          from: path.join(__dirname, 'assets', 'fonts'),
+          to: path.join(__dirname, 'public', 'fonts')
+        },
+        {
+          from: path.join(__dirname, 'assets', 'images'),
+          to: path.join(__dirname, 'public', 'images')
+        },
+        {
+          from: path.join(__dirname, '.git'),
+          to: path.join(__dirname, 'public', '.git')
+        },
+        {
+          from: path.join(__dirname, 'assets', 'files'),
+          to: path.join(__dirname, 'public')
+        }
+      ]
+    })
   ],
   devtool: 'source-map',
   node: {
-    __dirname: true,
+    __dirname: false,
     __filename: true,
   },
   devServer: {
     hot: true,
-    contentBase: path.resolve(__dirname, 'public'),
-    publicPath: '/'
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    port: 9000
   }
 }

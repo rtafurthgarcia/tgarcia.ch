@@ -1,0 +1,32 @@
+{
+    "name": "Node.js Dev Container",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": "true",
+            "username": "node",
+            "upgradePackages": "true"
+        },
+        "ghcr.io/devcontainers/features/git:1": {
+            "version": "latest",
+            "ppa": "false"
+        }
+    },
+    "postCreateCommand": "sudo npm install -D",
+    "postStartCommand": "npm run build",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "amandeepmittal.pug"
+            ],
+            "settings": {
+                "node.autoAttach": "on",
+                "eslint.format.enable": true,
+                "editor.formatOnSave": true
+            }
+        }
+    }
+}
