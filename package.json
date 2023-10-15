@@ -5,12 +5,11 @@
   "main": "index.pug",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "server": "webpack-dev-server --config webpack.config.js",
-    "deploy": "bash deploy.sh"
+    "server": "webpack-dev-server --config webpack.config.js"
   },
   "repository": {
     "type": "git",
-    "url": "ssh://gitea@git.tgarcia.ch/richard/blog-fork.git"
+    "url": "ssh://tgarcia.ch/.git"
   },
   "author": "Richard Tafurth-Garcia",
   "license": "GPL-3.0",
