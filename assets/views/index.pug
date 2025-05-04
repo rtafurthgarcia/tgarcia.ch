@@ -45,8 +45,25 @@ html(lang='fr')
           h3 Également disponible sur 
           a(href="hkps://keys.openpgp.org") @keys.openpgp.org
     footer
-      a(href="/.git") @Sources sous licence GPL
+      a(href="https://github.com/rtafurthgarcia/tgarcia.ch") @Sources sous licence GPL
       p 🇨🇭
-    noscript 
-      img(src="https://skynet.cdstm.ch/ingress/02183e26-eb89-46e9-9393-231045e961d8/pixel.gif")
-    script(defer src="https://skynet.cdstm.ch/ingress/02183e26-eb89-46e9-9393-231045e961d8/script.js") 
+    // Matomo
+    script.
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(["setCookieDomain", "*.tgarcia.ch"]);
+      _paq.push(["setDoNotTrack", true]);
+      _paq.push(["disableCookies"]);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+      var u="//anal.cdstm.ch/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '3']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    noscript
+      p
+        img(referrerpolicy='no-referrer-when-downgrade' src='//anal.cdstm.ch/matomo.php?idsite=3&rec=1' style='border:0;' alt='')
